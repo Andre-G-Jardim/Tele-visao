@@ -5,7 +5,20 @@ const loginStyle = StyleSheet.create({
     containerLogin:{
         display: 'flex',
         maxWidth: '100%',
-        marginTop: 100,
+        marginTop: 50,
+    },
+    divLogo: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    logo: {
+        alignItems: 'center',
+        width: 80,
+        height: 80,
+        position: 'relative',
+        marginBottom: 10,
     },
 
     containerCentralize:{

@@ -1,11 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Text, TextInput, View, Pressable } from 'react-native';
+import { Text, TextInput, View, Pressable, Image } from 'react-native';
 import loginStyle from  './LoginStyle.js';
 import { db } from '../../src/config/firebase.js';
 import { useAuth } from '../../src/context/AuthContext.js';
 import { auth } from '../../src/config/firebase.js';
 import { userGlobal } from '../../global.js';
+import logo from '../../assets/logo.png';
 import { collection, getDocs, updateDoc, doc,  query, where} from 'firebase/firestore';
 import { createUserWithEmailAndPassword,
           onAuthStateChanged,
@@ -98,7 +99,10 @@ export default function Login({navigation}){
   return(
       <View style={loginStyle.containerCentralize}>
         <View style={loginStyle.containerLogin}>
-          {/* <Text>{error && <Alert variant="danger">{error}</Alert>}</Text> */}
+          <View style={loginStyle.divLogo}>
+            <Image source={logo} style={loginStyle.logo} />
+          </View>
+
           <Text style={loginStyle.titleLogin}>Login</Text>
           <Text style={loginStyle.textLogin}>E-mail</Text>
           <TextInput 

@@ -35,40 +35,52 @@ import { userGlobal } from './global';
 
 import { DefaultTheme } from '@react-navigation/native';
 
+const CircleAvatar = ({ text }) => {
+  return (
+    <View style={{ width: 30, height: 30, borderRadius: 15, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center', marginRight: 10 }}>
+      <Text style={{ color: 'white', fontWeight: 'bold' }}>{text}</Text>
+    </View>
+  );
+};
+
 export default function App() {
   const Stack = createStackNavigator();
 
   const navTheme = DefaultTheme;
   navTheme.colors.background = '#fff';
+  navTheme.colors.card = '#6a79a8';
+  navTheme.colors.text = '#fff';
 
+  
+  
   return (
     <NavigationContainer theme={navTheme}>
        <Stack.Navigator>
-      {userGlobal.isLoggedIn == false && <Stack.Screen name='Login' component={Login} />}
-       <Stack.Screen name='Cadastro_Perfil' component={Cadastro_Perfil} />
-       <Stack.Screen name='Admin_Home' component={Admin_Home} />
-       <Stack.Screen name='Cadastra_Local' component={Cadastra_Local} />
-       <Stack.Screen name='Autoriza_Usuarios' component={Autoriza_Usuarios} />
-       <Stack.Screen name='Verifica_Usuarios' component={Verifica_Usuarios} />
-       <Stack.Screen name='Seleciona_Examinador_Da_Semana' component={Seleciona_Examinador_Da_Semana} />
+      {userGlobal.isLoggedIn == false && <Stack.Screen name='Login' component={Login} options={{ title: 'Televisão', headerTitleAlign: 'center'}}/>}
+       <Stack.Screen name='Cadastro_Perfil' component={Cadastro_Perfil} options={{ title: 'Televisão' , headerTitleAlign: 'center' }}/>
+       <Stack.Screen name='Admin_Home' component={Admin_Home} options={{ title: 'Televisão', headerTitleAlign: 'center' }}/>
+       <Stack.Screen name='Cadastra_Local' component={Cadastra_Local} options={{ title: 'Televisão', headerTitleAlign: 'center' }}/>
+       <Stack.Screen name='Autoriza_Usuarios' component={Autoriza_Usuarios} options={{ title: 'Televisão', headerTitleAlign: 'center' }}/>
+       <Stack.Screen name='Verifica_Usuarios' component={Verifica_Usuarios} options={{ title: 'Televisão', headerTitleAlign: 'center' }}/>
+       <Stack.Screen name='Seleciona_Examinador_Da_Semana' component={Seleciona_Examinador_Da_Semana} options={{ title: 'Televisão', headerTitleAlign: 'center' , headerTitleAlign: 'center' }}/>
 
-       <Stack.Screen name='Requisitante_Home' component={Requisitante_Home} />
-       <Stack.Screen name='Solicitacao_Exame' component={Solicitacao_Exame} />
-       <Stack.Screen name='Ver_Laudos' component={Ver_Laudos} />
+       <Stack.Screen name='Requisitante_Home' component={Requisitante_Home} options={{ title: 'Televisão', headerTitleAlign: 'center' }}/>
+       <Stack.Screen name='Solicitacao_Exame' component={Solicitacao_Exame} options={{ title: 'Televisão', headerTitleAlign: 'center' }}/>
+       <Stack.Screen name='Ver_Laudos' component={Ver_Laudos} options={{ title: 'Televisão' }}/>
 
-       <Stack.Screen name='Examinador_Home' component={Examinador_Home} options={{ title: 'Examinador' }} />
-       <Stack.Screen name='Exames_Pendentes' component={Exames_Pendentes} options={{ title: 'Examinador' }} />
-       <Stack.Screen name='Oftalmologista_Home' component={Oftalmologista_Home} />
+       <Stack.Screen name='Examinador_Home' component={Examinador_Home} options={{ title: 'Televisão', headerTitleAlign: 'center' }}/>
+       <Stack.Screen name='Exames_Pendentes' component={Exames_Pendentes} options={{ title: 'Televisão', headerTitleAlign: 'center' }} />
+       <Stack.Screen name='Oftalmologista_Home' component={Oftalmologista_Home} options={{ title: 'Televisão', headerTitleAlign: 'center' }}/>
        <Stack.Screen name='Exames_Pendentes_Oftalmologista' component={Exames_Pendentes_Oftalmologista} />
-       <Stack.Screen name='Laudo' component={Laudo} />
-       <Stack.Screen name='Laudos_Feitos' component={Laudos_Feitos} />
-       <Stack.Screen name='Ver_Laudo' component={Ver_Laudo} />
+       <Stack.Screen name='Laudo' component={Laudo} options={{ title: 'Televisão', headerTitleAlign: 'center' }}/>
+       <Stack.Screen name='Laudos_Feitos' component={Laudos_Feitos} options={{ title: 'Televisão', headerTitleAlign: 'center' }}/>
+       <Stack.Screen name='Ver_Laudo' component={Ver_Laudo} options={{ title: 'Televisão', headerTitleAlign: 'center' }}/>
 
        <Stack.Screen name='Exame' component={Exame} />
-       <Stack.Screen name='Atribuir_Coleta' component={Atribuir_Coleta} options={{ title: 'Examinador' }} />
-       <Stack.Screen name='Exames_Atribuidos' component={Exames_Atribuidos} options={{ title: 'Examinador' }} />
-       <Stack.Screen name='Coletas_Em_Andamento' component={Coletas_Em_Andamento} options={{ title: 'Examinador' }} />
-       <Stack.Screen name='Coletas_Feitas' component={Coletas_Feitas} options={{ title: 'Examinador' }} />
+       <Stack.Screen name='Atribuir_Coleta' component={Atribuir_Coleta} options={{ title: 'Televisão', headerTitleAlign: 'center' }} />
+       <Stack.Screen name='Exames_Atribuidos' component={Exames_Atribuidos} options={{ title: 'Televisão', headerTitleAlign: 'center' }} />
+       <Stack.Screen name='Coletas_Em_Andamento' component={Coletas_Em_Andamento} options={{ title: 'Televisão', headerTitleAlign: 'center' }} />
+       <Stack.Screen name='Coletas_Feitas' component={Coletas_Feitas} options={{ title: 'Televisão', headerTitleAlign: 'center' }} />
      </Stack.Navigator>
     </NavigationContainer>
   );
